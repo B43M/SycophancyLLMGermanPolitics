@@ -1,7 +1,9 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
+
 import transformers
 import torch
 
+model = "tiiuae/falcon-7b-instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 pipeline = transformers.pipeline(
