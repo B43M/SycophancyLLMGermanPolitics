@@ -10,14 +10,14 @@ srun -K \
 --container-image=/netscratch/enroot/huggingface_text-generation-inference_1.1.0.sqsh \
 --container-mounts=/netscratch:/netscratch,/ds:/ds,/ds/models/llms/cache:/data,$HOME:$HOME \
 --container-workdir=$HOME \
--p A100-PCI \
---mem 64GB \
+-p A100-40GB \
+--mem 128GB \
 --gpus 1 \
 text-generation-launcher \
 --model-id $MODEL_ID \
 --revision $REVISION \
 --quantize awq \
---max-batch-prefill-tokens 1024 \
+--max-batch-prefill-tokens 2048 \
 --port 5000
 
 # HOW-TO ACCESS THE (EXECUTABLE) API DOCUMENTATION:

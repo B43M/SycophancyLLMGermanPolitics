@@ -11,7 +11,7 @@ srun -K \
 --container-image=/netscratch/enroot/huggingface_text-generation-inference_1.1.0.sqsh \
 --container-mounts=/netscratch:/netscratch,/ds:/ds,/ds/models/llms/cache:/data,$HOME:$HOME \
 --container-workdir=$HOME \
--p A100-PCI \
+-p A100-40GB \
 --mem 64GB \
 --gpus 1 \
 text-generation-launcher \
